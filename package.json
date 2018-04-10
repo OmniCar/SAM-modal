@@ -21,6 +21,6 @@
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o dist/",
     "build-ts": "tsc",
-    "build": "npm run build-css &6 npm run build-ts"
+    "build": "npm run build-ts && npm run build-css"
   }
 }

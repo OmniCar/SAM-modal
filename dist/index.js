@@ -8,10 +8,10 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import * as ReactCSSTransitionGroup from "react-addons-css-transition-group";
-import "./SamModal.css";
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import * as ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import './SamModal.css';
 var SamModal = (function (_super) {
     __extends(SamModal, _super);
     function SamModal() {
@@ -32,22 +32,33 @@ var SamModal = (function (_super) {
     }
     SamModal.prototype.componentDidMount = function () {
         var _this = this;
-        document.addEventListener("keydown", function (e) { return _this.handleKeyPress(e); }, false);
+        document.addEventListener('keydown', function (e) { return _this.handleKeyPress(e); }, false);
     };
     SamModal.prototype.componentWillUnmount = function () {
-        document.removeEventListener("keydown", this.props.hideCb, false);
+        document.removeEventListener('keydown', this.props.hideCb, false);
     };
     // do not render modal inside app react DOM
     SamModal.prototype.render = function () {
-        var _a = this.props, htmlContent = _a.htmlContent, hideCb = _a.hideCb;
+        var _a = this.props, htmlContent = _a.htmlContent, hideCb = _a.hideCb, heightPct = _a.heightPct, widthPct = _a.widthPct;
+        var distVerticalPct = (100 - heightPct) / 2;
+        var distHorizontalPct = (100 - widthPct) / 2;
         return ReactDOM.createPortal(React.createElement("div", { className: "Modal" },
             React.createElement("div", { className: "Modal__overlay", onClick: this.handleMouseClick },
                 React.createElement(ReactCSSTransitionGroup, { transitionName: "modal", transitionAppear: true, transitionAppearTimeout: 0, transitionEnterTimeout: 0, transitionLeaveTimeout: 0 },
-                    React.createElement("div", { className: "Modal__box" },
+                    React.createElement("div", { className: "Modal__box", style: {
+                            top: distVerticalPct + "%",
+                            bottom: distVerticalPct + "%",
+                            left: distHorizontalPct + "%",
+                            right: distHorizontalPct + "%",
+                        } },
                         React.createElement("div", { className: "Modal__close" },
                             React.createElement("i", { className: "Modal__close__icon fa fa-times", onClick: hideCb })),
-                        React.createElement("div", { className: "Modal__content" }, htmlContent && (React.createElement("div", { className: "Modal__content--html-content", dangerouslySetInnerHTML: { __html: htmlContent } }))))))), document.getElementById("ModalPortal"));
+                        React.createElement("div", { className: "Modal__content" }, htmlContent && (React.createElement("div", { className: "Modal__content--html-content", dangerouslySetInnerHTML: { __html: htmlContent } }))))))), document.getElementById('ModalPortal'));
     };
     return SamModal;
 }(React.Component));
+SamModal.defaultProps = {
+    heightPct: 60,
+    widthPct: 60,
+};
 export default SamModal;
