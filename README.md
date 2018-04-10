@@ -16,8 +16,12 @@ render() {
 
   return (
     <div>
-    {
-      isVisible && <SamModal htmlContent={html} hideCb={ hideCb } />
+    {isVisible &&
+        <SamModal
+          htmlContent={html}
+          hideCb={ hideCb }
+          widthPct={40}
+          heightPct={40} />
     }
     </div>
   );
