@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "author": "Ole Frank Jensen",
   "license": "ISC",
+  "typings": "dist/index.d.ts",
   "dependencies": {
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
@@ -17,6 +18,8 @@
     "node-sass-chokidar": "^1.2.2"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/"
+    "build-css": "node-sass-chokidar src/ -o dist/",
+    "build-ts": "tsc",
+    "build": "npm run build-css &6 npm run build-ts"
   }
 }

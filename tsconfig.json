@@ -4,8 +4,9 @@
     "declaration": true,
     "module": "es6",
     "target": "es5",
-    "lib": ["es6", "dom", "es2015.promise"],
+    "lib": ["es6", "dom"],
     "jsx": "react",
-    "rootDir": "src"
+    "rootDir": "src",
+    "moduleResolution": "node"
   }
 }

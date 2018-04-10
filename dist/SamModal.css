@@ -1,0 +1,41 @@
+.Modal__overlay {
+  cursor: pointer;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: block; }
+
+.Modal__box {
+  will-change: transform, opacity;
+  display: block;
+  padding: 1.4rem;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  right: 20%;
+  bottom: 20%;
+  background: #fff;
+  overflow: auto;
+  border-radius: 0.5rem;
+  outline: none;
+  cursor: default; }
+  .Modal__box ul {
+    list-style-position: inside; }
+
+.Modal__close {
+  text-align: right;
+  font-size: 2rem; }
+  .Modal__close__icon {
+    cursor: pointer; }
+
+.Modal .modal-appear {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.35s ease-out, transform 0.5s ease-out; }
+
+.Modal .modal-appear.modal-appear-active {
+  opacity: 1;
+  transform: scale(1); }
