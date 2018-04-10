@@ -1,0 +1,22 @@
+{
+  "name": "sam-modal",
+  "version": "0.0.1",
+  "description": "A Modal component for React",
+  "main": "dist/index.js",
+  "author": "Ole Frank Jensen",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^16.2.0",
+    "react-addons-css-transition-group": "^15.6.2",
+    "react-dom": "^16.2.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.0.27",
+    "@types/react-addons-css-transition-group": "^15.0.4",
+    "@types/react-dom": "^16.0.3",
+    "node-sass-chokidar": "^1.2.2"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar src/ -o src/"
+  }
+}
