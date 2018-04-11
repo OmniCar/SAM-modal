@@ -1,7 +1,7 @@
 import './SamModal.css';
 export interface SamModalProps {
     htmlContent?: string;
-    hideCb?: () => void;
+    hideCb: () => void;
     heightPct?: number;
     widthPct?: number;
 }

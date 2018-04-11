@@ -5,17 +5,12 @@ import './SamModal.css'
 
 export interface SamModalProps {
   htmlContent?: string
-  hideCb?: () => void
+  hideCb: () => void
   heightPct?: number
   widthPct?: number
 }
 
 class SamModal extends React.Component<SamModalProps, {}> {
-  public static defaultProps: Partial<SamModalProps> = {
-    heightPct: 60,
-    widthPct: 60,
-  }
-
   public componentDidMount() {
     document.addEventListener('keydown', e => this.handleKeyPress(e), false)
   }
@@ -28,8 +23,8 @@ class SamModal extends React.Component<SamModalProps, {}> {
   public render() {
     const { htmlContent, hideCb, heightPct, widthPct } = this.props
 
-    const distVerticalPct: number = (100 - heightPct) / 2
-    const distHorizontalPct: number = (100 - widthPct) / 2
+    const distVerticalPct: number = (100 - (heightPct ? heightPct : 60)) / 2 // defaults to 60
+    const distHorizontalPct: number = (100 - (widthPct ? widthPct : 60)) / 2 // defaults to 60
 
     return ReactDOM.createPortal(
       <div className="Modal">

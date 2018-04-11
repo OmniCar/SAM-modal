@@ -42,8 +42,8 @@ var SamModal = (function (_super) {
     // do not render modal inside app react DOM
     SamModal.prototype.render = function () {
         var _a = this.props, htmlContent = _a.htmlContent, hideCb = _a.hideCb, heightPct = _a.heightPct, widthPct = _a.widthPct;
-        var distVerticalPct = (100 - heightPct) / 2;
-        var distHorizontalPct = (100 - widthPct) / 2;
+        var distVerticalPct = (100 - (heightPct ? heightPct : 60)) / 2; // defaults to 60
+        var distHorizontalPct = (100 - (widthPct ? widthPct : 60)) / 2; // defaults to 60
         return ReactDOM.createPortal(React.createElement("div", { className: "Modal" },
             React.createElement("div", { className: "Modal__overlay", onClick: this.handleMouseClick },
                 React.createElement(ReactCSSTransitionGroup, { transitionName: "modal", transitionAppear: true, transitionAppearTimeout: 0, transitionEnterTimeout: 0, transitionLeaveTimeout: 0 },
@@ -59,8 +59,5 @@ var SamModal = (function (_super) {
     };
     return SamModal;
 }(React.Component));
-SamModal.defaultProps = {
-    heightPct: 60,
-    widthPct: 60,
-};
 exports.default = SamModal;
+//# sourceMappingURL=index.js.map
