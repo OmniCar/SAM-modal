@@ -21,7 +21,7 @@ class SamModal extends React.Component<SamModalProps, {}> {
 
   // do not render modal inside app react DOM
   public render() {
-    const { htmlContent, hideCb, heightPct, widthPct } = this.props
+    const { htmlContent, hideCb, heightPct, widthPct, children } = this.props
 
     const distVerticalPct: number = (100 - (heightPct ? heightPct : 60)) / 2 // defaults to 60
     const distHorizontalPct: number = (100 - (widthPct ? widthPct : 60)) / 2 // defaults to 60
@@ -47,6 +47,7 @@ class SamModal extends React.Component<SamModalProps, {}> {
                 <i className="Modal__close__icon fa fa-times" onClick={hideCb} />
               </div>
               <div className="Modal__content">
+                {children}
                 {htmlContent && (
                   <div className="Modal__content--html-content" dangerouslySetInnerHTML={{ __html: htmlContent }} />
                 )}
