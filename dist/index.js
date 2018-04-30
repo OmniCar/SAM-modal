@@ -41,7 +41,7 @@ var SamModal = (function (_super) {
     };
     // do not render modal inside app react DOM
     SamModal.prototype.render = function () {
-        var _a = this.props, htmlContent = _a.htmlContent, hideCb = _a.hideCb, heightPct = _a.heightPct, widthPct = _a.widthPct;
+        var _a = this.props, htmlContent = _a.htmlContent, hideCb = _a.hideCb, heightPct = _a.heightPct, widthPct = _a.widthPct, children = _a.children;
         var distVerticalPct = (100 - (heightPct ? heightPct : 60)) / 2; // defaults to 60
         var distHorizontalPct = (100 - (widthPct ? widthPct : 60)) / 2; // defaults to 60
         return ReactDOM.createPortal(React.createElement("div", { className: "Modal" },
@@ -55,7 +55,9 @@ var SamModal = (function (_super) {
                         } },
                         React.createElement("div", { className: "Modal__close" },
                             React.createElement("i", { className: "Modal__close__icon fa fa-times", onClick: hideCb })),
-                        React.createElement("div", { className: "Modal__content" }, htmlContent && (React.createElement("div", { className: "Modal__content--html-content", dangerouslySetInnerHTML: { __html: htmlContent } }))))))), document.getElementById('ModalPortal'));
+                        React.createElement("div", { className: "Modal__content" },
+                            children,
+                            htmlContent && (React.createElement("div", { className: "Modal__content--html-content", dangerouslySetInnerHTML: { __html: htmlContent } }))))))), document.getElementById('ModalPortal'));
     };
     return SamModal;
 }(React.Component));
