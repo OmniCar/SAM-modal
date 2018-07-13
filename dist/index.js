@@ -14,7 +14,7 @@ var React = require("react");
 var ReactDOM = require("react-dom");
 var ReactCSSTransitionGroup = require("react-addons-css-transition-group");
 require("./SamModal.css");
-var SamModal = (function (_super) {
+var SamModal = /** @class */ (function (_super) {
     __extends(SamModal, _super);
     function SamModal() {
         var _this = _super !== null && _super.apply(this, arguments) || this;

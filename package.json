@@ -1,16 +1,16 @@
 {
-  "name": "sam-modal",
-  "version": "0.0.1",
+  "name": "@omnicar/sam-modal",
   "description": "A Modal component for React",
   "main": "dist/index.js",
-  "author": "Ole Frank Jensen",
-  "license": "ISC",
+  "author": "Omnicar A/S",
+  "license": "MIT",
   "typings": "dist/index.d.ts",
   "dependencies": {
     "font-awesome": "^4.7.0",
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "typescript": "^2.9.2"
   },
   "devDependencies": {
     "@types/react": "^16.0.27",
