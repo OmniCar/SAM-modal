@@ -1,5 +1,7 @@
 # SamModal
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/OmniCar/SAM-modal.svg)](https://greenkeeper.io/)
+
 SAM React component for displaying a Modal dialogue.
 
 ## Example usage
